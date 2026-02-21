@@ -13,7 +13,6 @@ public class ExchangerateService {
     private final String apiKey = System.getenv("API_KEY");
     private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-
     public ExchangerateResponse service(String from, String to, double amount) throws IOException, InterruptedException{
         String adress = "https://api.fastforex.io/convert?from=" + from + "&to=" + to + "&amount=" + amount + "&api_key=" + apiKey;
         HttpClient client = HttpClient.newHttpClient();

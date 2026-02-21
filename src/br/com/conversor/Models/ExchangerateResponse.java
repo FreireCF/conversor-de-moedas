@@ -5,6 +5,9 @@ import java.util.Map;
 public record ExchangerateResponse (String base, double amount, Map<String, Double> result){
     @Override
     public String toString() {
+        if(result == null){
+            return "\nResposta inválida da API";
+        }
         var targetCurrency = result.keySet() //pega as chaves do Map
             .stream() //tranforma as chaves em .stream para usar o .filter
             .filter(k -> !k.equals("rate")) //pega apenas o que não é rate (só a moeda)
