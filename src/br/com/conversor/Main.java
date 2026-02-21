@@ -14,8 +14,7 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         var scanner = new Scanner(System.in);
         var menu = new Menu();
-        var apiKey = System.getenv("API_KEY");
-        var gson = new GsonBuilder().setPrettyPrinting().create();
+        var apiResponse = new ExchangerateService();
         var from = "";
         var to = "";
         var amount = 0.0;
@@ -78,18 +77,7 @@ public class Main {
                         break;
             }
 
-            var adress = "https://api.fastforex.io/convert?from=" + from + "&to=" + to + "&amount=" +amount + "&api_key=" + apiKey;
-
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(adress)).build();
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            var json = response.body();
-            //System.out.println(json);
-
-            var temp = gson.fromJson(json, ExchangerateResponse.class);
-            System.out.println(temp);
-
+            System.out.println(apiResponse.service(from, to, amount));
         }
         scanner.close();
     }
