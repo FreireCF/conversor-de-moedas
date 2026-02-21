@@ -1,6 +1,6 @@
 package br.com.conversor.ConversionStrategy;
 
-import br.com.conversor.Models.ConversionStrategy;
+import br.com.conversor.ConversionStrategy.ConversionStrategy;
 
 public class EurToBrl implements ConversionStrategy {
     @Override

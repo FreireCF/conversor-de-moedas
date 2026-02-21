@@ -1,4 +1,4 @@
-package br.com.conversor.Models;
+package br.com.conversor.ConversionStrategy;
 
 public interface ConversionStrategy {
     String getFrom();
