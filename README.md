@@ -117,8 +117,6 @@ setx API_KEY "sua_chave_aqui"
 * Criar interface gráfica 
 * Implementar testes unitários (JUnit)
 
----
-
 <!-- ## 🤝 Contribuições
 
 Contribuições são bem-vindas!
