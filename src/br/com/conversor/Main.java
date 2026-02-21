@@ -76,7 +76,6 @@ public class Main {
                     System.out.println("Escolha um opção válida");
                         break;
             }
-
             System.out.println(apiResponse.service(from, to, amount));
         }
         scanner.close();

@@ -12,10 +12,10 @@ import java.net.http.HttpResponse;
 public class ExchangerateService {
     private final String apiKey = System.getenv("API_KEY");
     private Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private String adress = "https://api.fastforex.io/convert?from=";
+
 
     public ExchangerateResponse service(String from, String to, double amount) throws IOException, InterruptedException{
-        adress += from + "&to=" + to + "&amount=" + amount + "&api_key=" + apiKey;
+        String adress = "https://api.fastforex.io/convert?from=" + from + "&to=" + to + "&amount=" + amount + "&api_key=" + apiKey;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(adress)).build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
