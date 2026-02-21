@@ -2,6 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/
 
 ### Eclipse ###
 .apt_generated
@@ -27,3 +28,13 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Pasta de bibliotecas
+lib/
+
+# Arquivo de módulo do IntelliJ
+*.iml
+
+# Build
+out/
+*.class
